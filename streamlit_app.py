@@ -14,13 +14,6 @@ st.write(
     """
 )
 
-# option = st.selectbox(
-#     "What is your favorite fruit",
-#     ("Banana", "Strawberries", "Peaches"),
-# )
-
-# st.write("Your favorite fruit is:", option)
-
 cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
@@ -49,5 +42,7 @@ if ingredients_list:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
-
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
 
