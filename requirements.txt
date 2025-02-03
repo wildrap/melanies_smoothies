@@ -1,6 +1,7 @@
 #  requirements.txt
 snowflake-snowpark-python
 streamlit
+requests
 
 
 # name: app_environment
@@ -9,4 +10,4 @@ streamlit
 #dependencies:
 #  - python=3.8.*
 #  - snowflake-snowpark-python=
-#  - streamlit=
+#  - streamlit
